@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day02_03_exception" />
+        <module name="day02_01_response" />
+        <module name="fileuploadserver" />
+        <module name="day02_02_fileupload" />
+        <module name="day02_04_interceptor" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
