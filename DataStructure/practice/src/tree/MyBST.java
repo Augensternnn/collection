@@ -2,6 +2,9 @@ package tree;
 
 import java.util.Comparator;
 
+/**
+ * 二叉搜索树
+ */
 public class MyBST<E> extends MyBinaryTree<E> {
 	private Comparator<E> comparator;
 	
@@ -13,6 +16,9 @@ public class MyBST<E> extends MyBinaryTree<E> {
 		this.comparator = comparator;
 	}
 
+	/**
+	 * 添加
+	 */
 	public void add(E element) {
 		elementNotNullCheck(element);
 		
@@ -54,33 +60,23 @@ public class MyBST<E> extends MyBinaryTree<E> {
 		//新添加节点之后的处理
 		afterAdd(newNode);
 	}
+
 	/**
 	 * 添加node之后的调整
 	 * @param node 新添加的节点
 	 */
 	protected void afterAdd(Node<E> node){}
 
-	/**
-	 * 删除node之后的调整
-	 * @param node 被删除的节点 或 取代被删除节点的子节点[被删除节点度为1时]
-	 */
-	protected void afterRemove(Node<E> node){}
-
-	/**
-	 * 删除node之后的调整
-	 * @ param node 被删除的节点
-	 * @ param replacement 替代被删除节点的节点
-	 */
-//	protected void afterRemove(Node<E> node,Node<E> replacement){}
-
-	public void remove(E element) {
-		remove(node(element));
-	}
-
 	public boolean contains(E element) {
 		return node(element) != null;
 	}
-	
+
+	/**
+	 * 删除
+	 */
+	public void remove(E element) {
+		remove(node(element));
+	}
 	private void remove(Node<E> node) {
 		if (node == null) return;
 		
@@ -128,7 +124,12 @@ public class MyBST<E> extends MyBinaryTree<E> {
 			afterRemove(node);
 		}
 	}
-	
+	/**
+	 * 删除node之后的调整
+	 * @param node 被删除的节点 或 取代被删除节点的子节点[被删除节点度为1时]
+	 */
+	protected void afterRemove(Node<E> node){}
+
 	private Node<E> node(E element) {
 		Node<E> node = root;
 		while (node != null) {
@@ -142,6 +143,9 @@ public class MyBST<E> extends MyBinaryTree<E> {
 		}
 		return null;
 	}
+
+	//删除node之后的调整【node：被删除的节点；replacement：替代被删除节点的节点】
+	//protected void afterRemove(Node<E> node,Node<E> replacement){}
 	
 	/**
 	 * @return 返回值等于0，代表e1和e2相等；返回值大于0，代表e1大于e2；返回值小于于0，代表e1小于e2

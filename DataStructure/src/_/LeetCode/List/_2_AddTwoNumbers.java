@@ -27,6 +27,6 @@ public class _2_AddTwoNumbers {
         }
         if(tmp > 0)
             cur.next = new ListNode(tmp);
-        return newlist;
+        return newlist.next;
     }
 }

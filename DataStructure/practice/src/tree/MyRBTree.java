@@ -1,7 +1,12 @@
 package tree;
 
+import Tree.BinaryTree;
+
 import java.util.Comparator;
 
+/**
+ * 红黑树
+ */
 public class MyRBTree<E> extends MyBBST<E> {
     private static final boolean RED = false;
     private static final boolean BLACK = true;
@@ -32,7 +37,7 @@ public class MyRBTree<E> extends MyBBST<E> {
 
         // 删除黑色叶子节点【下溢】
         boolean left = parent.left==null || node.isLeftChild();// 判断被删除的node是左还是右
-        Node<E> sibling = left ? parent.left : parent.right;
+        Node<E> sibling = left ? parent.right : parent.left;
         if(left){// 被删除的节点在左边，兄弟节点在右边
             if (isRed(sibling)) {
                 black(sibling);
@@ -92,7 +97,6 @@ public class MyRBTree<E> extends MyBBST<E> {
                 rotateRight(parent);
             }
         }
-
     }
 
     /*@Override

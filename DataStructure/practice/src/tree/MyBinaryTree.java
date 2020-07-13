@@ -4,6 +4,9 @@ import Tree.util.printer.BinaryTreeInfo;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 二叉树
+ */
 public class MyBinaryTree<E> implements BinaryTreeInfo {
 	protected int size;
 	protected Node<E> root;
@@ -150,7 +153,6 @@ public class MyBinaryTree<E> implements BinaryTreeInfo {
 				height++;
 			}
 		}
-		
 		return height;
 	}
 	public int height2() {
@@ -214,7 +216,7 @@ public class MyBinaryTree<E> implements BinaryTreeInfo {
 		/**
 		 * @return 如果返回true，就代表停止遍历
 		 */
-		abstract boolean visit(E element);
+		public abstract boolean visit(E element);
 	}
 	
 	protected static class Node<E> {
